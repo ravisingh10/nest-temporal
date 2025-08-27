@@ -1,0 +1,78 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug NestJS App",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/main.ts",
+      "args": [],
+      "runtimeArgs": [
+        "--loader", "ts-node/esm"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      },
+      "console": "integratedTerminal",
+      "restart": true,
+      "protocol": "inspector",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ],
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Debug NestJS Worker",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/worker.ts",
+      "args": [],
+      "runtimeArgs": [
+        "--loader", "ts-node/esm"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      },
+      "console": "integratedTerminal",
+      "restart": true,
+      "protocol": "inspector",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ],
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Debug Built App",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/dist/main.js",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "restart": true,
+      "protocol": "inspector",
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ],
+      "preLaunchTask": "npm: build"
+    }
+  ]
+}
