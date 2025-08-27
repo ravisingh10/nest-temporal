@@ -73,6 +73,57 @@
         "${workspaceFolder}/dist/**/*.js"
       ],
       "preLaunchTask": "npm: build"
+    },
+    {
+      "name": "Debug Worker",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/worker.ts",
+      "args": [],
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "restart": true,
+      "sourceMaps": true,
+      "outputCapture": "std"
+    },
+    {
+      "name": "Debug Worker (with env file)",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/worker.ts",
+      "args": [],
+      "runtimeArgs": [
+        "-r",
+        "ts-node/register",
+        "-r",
+        "tsconfig-paths/register"
+      ],
+      "env": {
+        "NODE_ENV": "development",
+        "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "restart": true,
+      "sourceMaps": true,
+      "outputCapture": "std"
     }
   ]
 }
