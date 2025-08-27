@@ -32,7 +32,10 @@
     "@temporalio/client": "^1.12.3",
     "@temporalio/worker": "^1.12.3",
     "@temporalio/workflow": "^1.12.3",
+    "@types/redis": "^4.0.11",
     "nestjs-temporal-core": "^3.0.10",
+    "redis": "^5.8.2",
+    "redis-om": "^0.4.7",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1"
   },
